@@ -1,0 +1,16 @@
+PODS:
+  - idemeum (1.0.2)
+
+DEPENDENCIES:
+  - idemeum
+
+SPEC REPOS:
+  trunk:
+    - idemeum
+
+SPEC CHECKSUMS:
+  idemeum: 967f3bae7efc4f08d1652a41ecc893cfe6f59416
+
+PODFILE CHECKSUM: c3d3d1beba0970a09c12dc522a6c0d46b7296a8c
+
+COCOAPODS: 1.10.0

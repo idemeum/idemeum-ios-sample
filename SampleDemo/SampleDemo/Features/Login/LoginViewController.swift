@@ -10,6 +10,11 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         styleIdemeumButton()
+        IdemeumSDKManager().isUserLoggedIn { (isLoggedIn, ressult ) in
+            if(isLoggedIn) {
+                self.onUserResponseReceived(response: ressult)
+            }
+        }
     }
     
     //Description: This method will do corner radius for idemeum button
@@ -39,38 +44,43 @@ extension LoginViewController {
     func idemeumSignIn(loginType: LoginType) {
         IdemeumSDKManager().loginToIdemeum(viewController: self, loginType: loginType, onCompletion: { (isLoginSuccess: Bool, reason: String, response: Dictionary<String, Any>) in
             if(isLoginSuccess) {
-                var email = ""
-                var familyname = ""
-                var jti = ""
-                var aud = ""
-                var given_name = ""
-                var sub = ""
-                if let emailResponse = response["email"] as? String{
-                    email = emailResponse
-                }
-                if let familyNameResponse = response["family_name"] as? String{
-                    familyname = familyNameResponse
-                }
-                if let jtiResponse = response["jti"] as? String{
-                    jti = jtiResponse
-                }
-                if let audResponse = response["aud"] as? String{
-                    aud = audResponse
-                }
-                if let given_nameResponse = response["given_name"] as? String{
-                    given_name = given_nameResponse
-                }
-                if let subResponse = response["sub"] as? String{
-                    sub = subResponse
-                }
-                DispatchQueue.main.async {
-                    let profileController = self.storyboard?.instantiateViewController(identifier: "ProfileViewController") as? ProfileViewController
-                    profileController?.user =  User(family_name: familyname, jti: jti, aud: aud, email: email, given_name: given_name, sub: sub)
-                    self.navigationController?.pushViewController(profileController!, animated: true)
-                }
+                self.onUserResponseReceived(response: response)
             }else{
                 print(isLoginSuccess)
             }
         })
     }
+    
+    private func onUserResponseReceived( response: Dictionary<String, Any>){
+        var email = ""
+        var familyname = ""
+        var jti = ""
+        var aud = ""
+        var given_name = ""
+        var sub = ""
+        if let emailResponse = response["email"] as? String{
+            email = emailResponse
+        }
+        if let familyNameResponse = response["family_name"] as? String{
+            familyname = familyNameResponse
+        }
+        if let jtiResponse = response["jti"] as? String{
+            jti = jtiResponse
+        }
+        if let audResponse = response["aud"] as? String{
+            aud = audResponse
+        }
+        if let given_nameResponse = response["given_name"] as? String{
+            given_name = given_nameResponse
+        }
+        if let subResponse = response["sub"] as? String{
+            sub = subResponse
+        }
+        DispatchQueue.main.async {
+            let profileController = self.storyboard?.instantiateViewController(identifier: "ProfileViewController") as? ProfileViewController
+            profileController?.user =  User(family_name: familyname, jti: jti, aud: aud, email: email, given_name: given_name, sub: sub)
+            self.navigationController?.pushViewController(profileController!, animated: true)
+        }
+    }
 }
+

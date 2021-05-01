@@ -14,5 +14,14 @@ class ProfileViewController: UIViewController {
         family_name.text = "Family Name: \(String(describing: user!.family_name))"
         given_name.text = "Given Name: \(String(describing: user!.given_name))"
         email.text = "Email: \(String(describing: user!.email))"
+        let backButton = UIBarButtonItem(title: "", style: .plain, target: navigationController, action: nil)
+        navigationItem.leftBarButtonItem = backButton
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(logoutTapped))
+    }
+    
+    
+    @objc private func logoutTapped(){
+        IdemeumSDKManager().logoutIdemeum()
+        self.navigationController?.popViewController(animated: true)
     }
 }

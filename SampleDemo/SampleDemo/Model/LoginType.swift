@@ -14,7 +14,6 @@ class LoginMedium {
             key = Constants.IdemeumKeys.BioMetricKey
         case .ViaApp:
             key = Constants.IdemeumKeys.DVMIKey
-            
         }
     }
 }
