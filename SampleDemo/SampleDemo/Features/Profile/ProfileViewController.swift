@@ -1,12 +1,12 @@
 
 import UIKit
+import idemeum
 
 class ProfileViewController: UIViewController {
     var user:User? = nil
     @IBOutlet weak var family_name: UILabel!
     @IBOutlet weak var given_name: UILabel!
     @IBOutlet weak var email: UILabel!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,9 +19,10 @@ class ProfileViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(logoutTapped))
     }
     
-    
     @objc private func logoutTapped(){
-        IdemeumSDKManager().logoutIdemeum()
+        let idemeumSDK = Idemeum(parentView: UIViewController(), clientId: "")
+        idemeumSDK.logout()
         self.navigationController?.popViewController(animated: true)
     }
 }
+

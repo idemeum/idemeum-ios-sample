@@ -18,10 +18,6 @@
 		68436DA1261FED0200E1AE75 /* SampleDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68436DA0261FED0200E1AE75 /* SampleDemoTests.swift */; };
 		68436DAC261FED0200E1AE75 /* SampleDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68436DAB261FED0200E1AE75 /* SampleDemoUITests.swift */; };
 		68436DBF261FF17900E1AE75 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68436DBE261FF17900E1AE75 /* LoginViewController.swift */; };
-		68436DD7261FF32500E1AE75 /* IdemeumGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68436DD6261FF32400E1AE75 /* IdemeumGateway.swift */; };
-		68436DE0261FF38F00E1AE75 /* IdemeumGatewayImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68436DDF261FF38F00E1AE75 /* IdemeumGatewayImpl.swift */; };
-		68436DE8261FF7C500E1AE75 /* IdemeumSDKManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68436DE7261FF7C500E1AE75 /* IdemeumSDKManager.swift */; };
-		68436DED261FF7E700E1AE75 /* IdemeumConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68436DEC261FF7E700E1AE75 /* IdemeumConfigurator.swift */; };
 		685DE18A262EF5BE002A2CBC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685DE189262EF5BE002A2CBC /* ProfileViewController.swift */; };
 		685DE191262EF84B002A2CBC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685DE190262EF84B002A2CBC /* User.swift */; };
 		685DE240262FE19E002A2CBC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685DE23F262FE19E002A2CBC /* Constants.swift */; };
@@ -66,10 +62,6 @@
 		68436DAB261FED0200E1AE75 /* SampleDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleDemoUITests.swift; sourceTree = "<group>"; };
 		68436DAD261FED0200E1AE75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		68436DBE261FF17900E1AE75 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		68436DD6261FF32400E1AE75 /* IdemeumGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdemeumGateway.swift; sourceTree = "<group>"; };
-		68436DDF261FF38F00E1AE75 /* IdemeumGatewayImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdemeumGatewayImpl.swift; sourceTree = "<group>"; };
-		68436DE7261FF7C500E1AE75 /* IdemeumSDKManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdemeumSDKManager.swift; sourceTree = "<group>"; };
-		68436DEC261FF7E700E1AE75 /* IdemeumConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdemeumConfigurator.swift; sourceTree = "<group>"; };
 		685DE189262EF5BE002A2CBC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		685DE190262EF84B002A2CBC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		685DE23F262FE19E002A2CBC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -110,14 +102,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		30067E80263DA4A100F66F92 /* Gateway */ = {
-			isa = PBXGroup;
-			children = (
-				68436DDF261FF38F00E1AE75 /* IdemeumGatewayImpl.swift */,
-			);
-			path = Gateway;
-			sourceTree = "<group>";
-		};
 		68436D7A261FECFF00E1AE75 = {
 			isa = PBXGroup;
 			children = (
@@ -145,7 +129,6 @@
 			children = (
 				685DE23E262FE184002A2CBC /* Constants */,
 				685DE18F262EF833002A2CBC /* Model */,
-				68436DC7261FF25C00E1AE75 /* Idemeum SDK Manager */,
 				68436DBC261FF14400E1AE75 /* Features */,
 				68436D86261FECFF00E1AE75 /* AppDelegate.swift */,
 				68436D88261FECFF00E1AE75 /* SceneDelegate.swift */,
@@ -191,41 +174,6 @@
 				68436DBE261FF17900E1AE75 /* LoginViewController.swift */,
 			);
 			path = Login;
-			sourceTree = "<group>";
-		};
-		68436DC7261FF25C00E1AE75 /* Idemeum SDK Manager */ = {
-			isa = PBXGroup;
-			children = (
-				68436DDE261FF37A00E1AE75 /* ExternalDependencies */,
-				68436DD3261FF2C900E1AE75 /* ApplicationLogic */,
-			);
-			path = "Idemeum SDK Manager";
-			sourceTree = "<group>";
-		};
-		68436DD3261FF2C900E1AE75 /* ApplicationLogic */ = {
-			isa = PBXGroup;
-			children = (
-				68436DD5261FF2DD00E1AE75 /* Gateways */,
-			);
-			path = ApplicationLogic;
-			sourceTree = "<group>";
-		};
-		68436DD5261FF2DD00E1AE75 /* Gateways */ = {
-			isa = PBXGroup;
-			children = (
-				68436DD6261FF32400E1AE75 /* IdemeumGateway.swift */,
-			);
-			path = Gateways;
-			sourceTree = "<group>";
-		};
-		68436DDE261FF37A00E1AE75 /* ExternalDependencies */ = {
-			isa = PBXGroup;
-			children = (
-				30067E80263DA4A100F66F92 /* Gateway */,
-				68436DE7261FF7C500E1AE75 /* IdemeumSDKManager.swift */,
-				68436DEC261FF7E700E1AE75 /* IdemeumConfigurator.swift */,
-			);
-			path = ExternalDependencies;
 			sourceTree = "<group>";
 		};
 		685DE188262EF5AC002A2CBC /* Profile */ = {
@@ -516,18 +464,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				68436DE8261FF7C500E1AE75 /* IdemeumSDKManager.swift in Sources */,
 				683A16DF2630664F00C72932 /* LoginType.swift in Sources */,
 				685DE240262FE19E002A2CBC /* Constants.swift in Sources */,
-				68436DED261FF7E700E1AE75 /* IdemeumConfigurator.swift in Sources */,
 				68436D87261FECFF00E1AE75 /* AppDelegate.swift in Sources */,
 				68436D91261FECFF00E1AE75 /* SampleDemo.xcdatamodeld in Sources */,
-				68436DD7261FF32500E1AE75 /* IdemeumGateway.swift in Sources */,
 				68436DBF261FF17900E1AE75 /* LoginViewController.swift in Sources */,
 				685DE18A262EF5BE002A2CBC /* ProfileViewController.swift in Sources */,
 				68436D89261FECFF00E1AE75 /* SceneDelegate.swift in Sources */,
 				685DE191262EF84B002A2CBC /* User.swift in Sources */,
-				68436DE0261FF38F00E1AE75 /* IdemeumGatewayImpl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
