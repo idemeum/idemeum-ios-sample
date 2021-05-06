@@ -1,4 +1,3 @@
-# idemeum-ios-sample
 
 # Integration overview
 
